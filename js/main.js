@@ -9,4 +9,13 @@ $(document).ready(function(){
         food.push(food[i].toLowerCase());
 
     }
+    var re;
+    var c = $("#text").val();
+
+    for(var i=0; i<food.length;i++){
+
+        re = new RegExp("\\b"+food[i]+"\\b", "g");
+        c = c.replace(re, "<span class=\"keyword\">"+food[i]+"</span>");
+
+    }
 });
