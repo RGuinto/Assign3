@@ -1,7 +1,8 @@
 $(document).ready(function(){
+    /*
     $('#title').focus();
     $('#text').autosize();
-
+    */
     var food = ["BANANA","APPLE"];
     var len = food.length;
     for (var i=0;i<len;i++){
@@ -10,7 +11,7 @@ $(document).ready(function(){
 
     }
     var re;
-    var c = $("#text").val();
+    var c = $("#li").val();
 
     for(var i=0; i<food.length;i++){
 
