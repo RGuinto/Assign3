@@ -1,5 +1,5 @@
 var dbName = 'todo_list_store_2';
- 
+
 sklad.open(dbName, {
   version: 2,
   migration: {
@@ -23,7 +23,22 @@ sklad.open(dbName, {
     var $description = $('#description');
     var $add         = $('#add');
     var $list        = $('#list');
- 
+    var food = ["BANANA","APPLE"];
+    var len = food.length;
+    for (var i=0;i<len;i++){
+
+        food.push(food[i].toLowerCase());
+    }
+
+    var rist = document.getElementsByTagName("li");
+    for (each item in the list in ul){
+      for(var i=0;i<=food.length;i++){
+        if (description[i] == food[j]){
+          $li[i].attr('class', 'keyword');
+        }
+      }
+    }
+    
     function updateRows(conn) {
       conn
         .get({
@@ -52,11 +67,17 @@ sklad.open(dbName, {
     }
  
     updateRows(conn);
- 
     $add.click(function () {
       if (!$description.val().trim()) {
         return;
       }
+
+      for(var i=0;i<=food.length;i++){
+        if ($description.val().trim() == food[i]){
+          $li[i].attr('class', 'keyword');
+        }
+      }
+
       conn.insert({
         todos: [
           {

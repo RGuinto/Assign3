@@ -12,7 +12,7 @@ $(document).ready(function(){
     }
     var re;
     var c = $("#li").val();
-
+    
     for(var i=0; i<food.length;i++){
 
         re = new RegExp("\\b"+food[i]+"\\b", "g");
