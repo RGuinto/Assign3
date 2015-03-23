@@ -1,29 +1,34 @@
-<!-- Grocery List from http://codepen.io/jpokusa/pen/GBysb-->
+<!-- Grocery List from http://codepen.io/Russbrown/pen/IgBuh-->
 <!doctype html>
 
 <html>
 
+<html ng-app>
   <head>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script type="text/javascript" ng:autobind src="http://code.angularjs.org/0.9.16/angular-0.9.16.js"></script>
-  
-    
-  <link href="index.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="//use.edgefonts.net/vast-shadow:n4:all.js"></script>
+    <script src="//use.edgefonts.net/vast-shadow:n4:all;megrim.js"></script>
+    <script src='js/script.js'></script>
+	<link href="index.css" rel="stylesheet" type="text/css">
   </head>
-
   <body>
-  		<pre id="layer"></pre>
-	    <input type='text' id='description'> <button id='add'>Add</button>
-
-	    <ul id='list'>
-	    	<!-- <li class="keyword"> ORANGE </li> -->
-	    </ul>
-
-	    <script src='js/sklad.js'></script>
-	    <script src='js/zepto.js'></script>
-	    <script src='js/script.js'></script>
-	    <!--<script src="js/main.js"></script>-->
+    <div class="todo-wrapper" ng-controller="TodoCtrl">
+      <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
+      <ul>
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done"/>
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form>
+        <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
+        <button class="add-btn" ng-click="addTodo()"><h2>Add</h2></button>
+      </form>
+      
+      <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button>
+    </div>
 
 		<script src="prefixfree-gh-pages/prefixfree.min.js" type="application/javascript"></script>
-	</body>
+  </body>
+  
 </html>
