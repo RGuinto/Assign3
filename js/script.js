@@ -15,11 +15,10 @@ function TodoCtrl($scope) {
     $scope.todos.push({text:$scope.formTodoText, done:false});
     $scope.formTodoText = '';
   };
-  
-    $scope.clearCompleted = function () {
-        $scope.todos = _.filter($scope.todos, function(todo){
+    $scope.clearCompleted = function(){
+        $scope.todos = $scope.todos.filter(function(todo){
             return !todo.done;
-        });
+        })
     };
 
     var food = ["BANANA","APPLE"];
