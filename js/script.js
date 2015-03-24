@@ -21,7 +21,28 @@ function TodoCtrl($scope) {
             return !todo.done;
         });
     };
+
+    var food = ["BANANA","APPLE"];
+    var len = food.length;
+    for (var i=0;i<len;i++){
+        food.push(food[i].toLowerCase());
+        $scope.todos.push({text:food[i], done:false});
+    }
+
+
+    // var parseList = document.getElementsByTagName('span');
+
+    // for (var i = 1; i<=parseList.length; i++){
+    //   for (var j = 0; j<=food.length; j++){
+    //     if (parseList[i] == food[j]){
+    //       parseList[i].addClass("keyword");
+    //     }
+    //   }
+    // }
+
 }
+
+
 
 //     // Color coding part. Not yet working.
 //     var food = ["BANANA","APPLE"];

@@ -1,4 +1,5 @@
 <!-- Grocery List from http://codepen.io/Russbrown/pen/IgBuh-->
+<!--
 <!doctype html>
 
 <html>
@@ -6,8 +7,8 @@
 <html ng-app>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    <script src="//use.edgefonts.net/vast-shadow:n4:all.js"></script>
-    <script src="//use.edgefonts.net/vast-shadow:n4:all;megrim.js"></script>
+     <!-- <script src="//use.edgefonts.net/vast-shadow:n4:all.js"></script>
+    // <script src="//use.edgefonts.net/vast-shadow:n4:all;megrim.js"></script>
     <script src='js/script.js'></script>
 	<link href="index.css" rel="stylesheet" type="text/css">
   </head>
@@ -29,6 +30,48 @@
     </div>
 
 		<script src="prefixfree-gh-pages/prefixfree.min.js" type="application/javascript"></script>
+  </body>
+  
+</html>
+-->
+
+<!-- Grocery List from http://codepen.io/Russbrown/pen/IgBuh-->
+<!doctype html>
+
+<html>
+
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src='js/script.js'></script>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="main">
+        <div class="todo-wrapper" ng-controller="TodoCtrl">
+          <h1>Grocery List</h1>
+          <form>
+            <input class="add-input" placeholder="Add an item" type="text" ng-model="formTodoText" ng-model-instant />
+            <button class="add-btn" ng-click="addTodo()">Add</button>
+          </form>
+
+          <h2><span class="emphasis">{{getTotalTodos()}}</span> items to buy</h2>
+          <ul>
+            <li ng-repeat="todo in todos">
+              <input type="checkbox" ng-model="todo.done"/>
+              <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+          </ul>
+          
+          <button class="clear-btn" ng-click="clearCompleted()">Completed</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="prefixfree-gh-pages/prefixfree.min.js" type="application/javascript"></script>
   </body>
   
 </html>
