@@ -66,12 +66,12 @@ li{
 	padding: 1em;
 }
 
-/*@media (min-width: 400px){
+@media (max-width: 40em){
 	.main{
-		margin: 0;
-		width: 100%;
+		width: 90%;
+		margin: 1em;
 	}
-}*/
+}
 
 .sc {color: brown;}
 .keyword {color: purple; font-weight: bold;}
